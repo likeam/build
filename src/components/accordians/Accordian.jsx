@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import data from './data'
+import './style.css';
 
 export default function Accordian() {
 
   const [selected, setSelected] = useState('null');
+  const [enableMultiSelction, setEnableMultiSelection] = useState(false);
+  const [multiple, setMultiple] = useState([]);
 
   function handleSingleSelection(getItemId){
     setSelected(getItemId === selected ? null : getItemId);
@@ -11,7 +14,8 @@ export default function Accordian() {
 
 
   return (
-    <div className='wrapper'>
+    <div className='acc-wrapper'>
+      <button onClick={() => setEnableMultiSelection(!enableMultiSelction)}>Enable Multi Selction</button>
       <div className='accordian'>
         {
           data && data.length > 0 ? 
@@ -22,7 +26,7 @@ export default function Accordian() {
             </div>
             {
               selected === item.id ?
-              <div className='content'>{item.answer}</div>
+              <div className='acc-content'>{item.answer}</div>
               : null
             }
           </div>)
