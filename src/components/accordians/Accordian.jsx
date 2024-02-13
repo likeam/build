@@ -11,6 +11,17 @@ export default function Accordian() {
   function handleSingleSelection(getItemId){
     setSelected(getItemId === selected ? null : getItemId);
   }
+  function handleMultiSelection(getItemId){
+    let copyMulti = [...multiple];
+    const findIndexOfCurrentId = copyMulti.indexOf(getItemId);
+
+    console.log(findIndexOfCurrentId);
+    if(findIndexOfCurrentId === -1) copyMulti.push(getItemId);
+    else copyMulti.splice(findIndexOfCurrentId, 1);
+
+    setMultiple(copyMulti);
+
+  }
 
 
   return (
@@ -20,14 +31,13 @@ export default function Accordian() {
         {
           data && data.length > 0 ? 
           data.map(item => <div className='item'>
-            <div onClick = {() => handleSingleSelection(item.id)} className='title'>
+            <div onClick = {enableMultiSelction ? () => handleMultiSelection(item.id) :() => handleSingleSelection(item.id)} className='title'>
               <h3>{item.question}</h3>
                 <span>+</span>
             </div>
-            {
-              selected === item.id ?
-              <div className='acc-content'>{item.answer}</div>
-              : null
+            { enableMultiSelction ?
+              multiple.indexOf(item.id) !== -1 && ( <div className='acc-content'>{item.answer}</div> ) :
+              selected === item.id  &&  (<div className='acc-content'>{item.answer}</div>)
             }
           </div>)
            : <div>No Data Found</div>
