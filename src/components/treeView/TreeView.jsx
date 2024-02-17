@@ -1,9 +1,10 @@
 import React from 'react'
+import MenuList from './MenuList'
 
-export default function TreeView() {
+export default function TreeView({menu = []}) {
   return (
     <div>
-      Tree Views
+        <MenuList list = {menu}/ >
     </div>
   )
 }
