@@ -3,9 +3,8 @@ import Accordian from './components/accordians/Accordian'
 import RandomColor from './components/randomColor/RandomColor'
 import StarRating from './components/star-rating/StarRating'
 import ImageSlider from './components/imageSlider/ImageSlider'
-import TreeView from './components/treeView/TreeView'
 import QRCodeGenerator from './components/QRCodeGenerator/QRCodeGenerator'
-
+import Themes from './components/thems/Themes'
 const App = () => {
   return (
     <div>      
@@ -17,6 +16,7 @@ const App = () => {
         limit={"10"} />
      {/* <TreeView menus = {menus} />*/}
      <QRCodeGenerator />
+     <Themes />
     </div>
   )
 }
