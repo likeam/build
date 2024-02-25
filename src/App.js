@@ -5,6 +5,7 @@ import StarRating from './components/star-rating/StarRating'
 import ImageSlider from './components/imageSlider/ImageSlider'
 import QRCodeGenerator from './components/QRCodeGenerator/QRCodeGenerator'
 import Themes from './components/thems/Themes'
+import ScrollIndicator from './components/scrollIndicator/ScrollIndicator'
 const App = () => {
   return (
     <div>      
@@ -17,6 +18,7 @@ const App = () => {
      {/* <TreeView menus = {menus} />*/}
      <QRCodeGenerator />
      <Themes />
+     <ScrollIndicator />
     </div>
   )
 }
