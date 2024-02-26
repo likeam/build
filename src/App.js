@@ -12,13 +12,14 @@ const App = () => {
       <Accordian />
       <RandomColor />
       <StarRating  />
-      <ImageSlider  url={"https://picsum.photos/v2/list"}
+      {/*<ImageSlider  url={"https://picsum.photos/v2/list"} >*/}
         page={"1"}
         limit={"10"} />
      {/* <TreeView menus = {menus} />*/}
      <QRCodeGenerator />
      <Themes />
-     <ScrollIndicator />
+     <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+     
     </div>
   )
 }
